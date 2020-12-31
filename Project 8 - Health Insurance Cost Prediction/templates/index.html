@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Health Insurance Cost Prediction</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ 
+}
+
+</style>
+</head>
+
+<body id="p1" align="center">
+<div class="image">
+<img src="images/health.jpg" alt="" class="image" />
+<form action="{{ url_for('predict')}}" method="post" align="center" class="form-group" name="f1">
+
+<legend><h2>Health Insurance Cost Prediction</h2></legend><br>
+<div class="col-xs-8">
+<input type="text" name="age" placeholder="Age" required="required" class="form-control"/><br><br>
+</div>
+<div class="col-xs-8">
+<span class="label label-primary">Please type your gender - Female:0 , Male:1</span><br><br>
+        <input type="text" name="sex" placeholder="Gender" required="required" class="form-control input" /><br><br>
+		</div>
+		<div class="col-xs-8">
+	<input type="text" name="bmi" placeholder="bmi" required="required" class="form-control"/><br><br>
+	</div>
+	<div class="col-xs-8">
+	<input type="text" name="childern" placeholder="childern" required="required"class="form-control" /><br><br>
+	</div>
+	<div class="col-xs-8">
+	<span class="label label-primary">Please type your habbit - nonsmoker:0, Smoker:1</span><br><br>
+	<input type="text" name="smoker" placeholder="Smoker" required="required" class="form-control" /><br><br>
+	</div>
+	<div class="col-xs-8">
+	<span class="label label-primary"> please type your region - southwest:3,southeast:2,northwest:1,northeast:0</span><br><br>
+		<input type="text" name="region" placeholder="region" required="required" class="form-control" /><br><br>
+</div>
+<div class="col-xs-8">
+        <button type="submit" id="btn1" class="btn btn-primary">Predict</button>
+</div>
+<div class="col-xs-8">
+<h1><span class="label label-primary">{{ prediction_text }}</span></h1><br><br>
+</form>
+</div>
+</div>
+
+
+</body>
+
+</html>
